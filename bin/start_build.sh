@@ -1,2 +1,2 @@
 #!/bin/bash
-aws --profile for-all-codebuild-project-in-hoamon-info-AWS codebuild start-build --project-name www-hoamon-info-in-AWS-s3
+aws --profile for-all-codebuild-project-in-hoamon-info-AWS codebuild start-build --project-name cp-files-to-AWS-s3-bucket-www-hoyun2-info
