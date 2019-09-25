@@ -61,11 +61,6 @@
                 <span class="fb-like" data-href="http://www.hoyun2.info/"
                     data-send="false" data-width="320" data-show-faces="true"></span>
             </li>
-            <li class="pull-right">
-                <span class="g-plusone" data-href="http://www.hoyun2.info/"
-                    data-size="tall" data-width="320" data-annotation="inline">
-                </span>
-            </li>
           </ul>
 
           <h1 style="white-space: nowrap;"><span id="people" style="margin-right: -20px;">亻</span><span class="text-danger">可</span>云勻</h1>
@@ -95,7 +90,7 @@
         <p class="lead">再等等，您說出生年怎麼可能是質數！不管是以西元 2013 年或是民國 102 年來看，前者可被 3 整除，後者是偶數，怎麼算都不是質數呀！據我老爸的說法是，他又不<strong>只</strong>信基督教(含新教、正教、天主教、長老教會及其他教派)，只用基督出生年來算，對佛、道、伊斯蘭教、巫毒教…都不公平;
             而民國會倒，用這個算絕不靠譜。所以是以老爸出生年來算的，我是在岳峰 37 年出生，這個值是「<strong>永遠不會變</strong>」，比<a href="http://www.hoamon.info/blog/2012/12/19/homosexual_marriage_in_law.html">美國國債還保證</a>。絕吧！看得出<a href="http://www.hoamon.info/blog/2012/01/01/blog-post.html">科學家都不值得相信</a>，他們可是有操弄數據的習慣。</p>
 
-        <p><strong>P.S.</strong> 今天是個特別的日子: <a href="https://plus.google.com/photos/109599559104256217166/albums/5069928896097371281">爸媽結婚</a> 10 周年紀念日，所以挑今天開站。本來，老爸是要把我叫作「何步緩」，要問問我為什麼走得那麼慢。但媽媽非常有意見，她說：『這聽起來就像借錢不還，作人沒有信用，不好』。後來，老媽看了「<a href="http://www.hoamon.info/blog/2012/05/01/blog-post.html">四十自述</a>」後，把我命名為「何適」，希望我當個文學家，但其實，他們只是想滿足個人虛榮，可以逢人便說：『我是何(合)適的爸爸、我是何(合)適的媽媽』。但後來好像是嫌文學家賺不了錢，所以又換了。</p>
+        <p><strong>P.S.</strong> 今天是個特別的日子: <a href="#google_plus_has_shotdown">爸媽結婚</a> 10 周年紀念日，所以挑今天開站。本來，老爸是要把我叫作「何步緩」，要問問我為什麼走得那麼慢。但媽媽非常有意見，她說：『這聽起來就像借錢不還，作人沒有信用，不好』。後來，老媽看了「<a href="http://www.hoamon.info/blog/2012/05/01/blog-post.html">四十自述</a>」後，把我命名為「何適」，希望我當個文學家，但其實，他們只是想滿足個人虛榮，可以逢人便說：『我是何(合)適的爸爸、我是何(合)適的媽媽』。但後來好像是嫌文學家賺不了錢，所以又換了。</p>
 
       </div>
 
@@ -188,12 +183,6 @@
     <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/static/jquery.blockUI.1.33.js"></script>
     <script type="text/javascript">
-        (function() {
-            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-            po.src = '//apis.google.com/js/plusone.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-        })();
-
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -259,6 +248,10 @@
                 dataType: "json",
                 success: function(obj) {
                     if(typeof obj == 'object'){
+                        console.log(obj['BRANCH']);
+                        console.log(obj['CODEBUILD_BUILD_ID']);
+                        console.log(obj['BUILD_TIME']);
+                        console.log(obj['COMMIT_CHANGESET']);
                         var d = new Date();
                         $('#this_year').text(d.getFullYear());
                         $('#build_id').text(obj['CODEBUILD_BUILD_ID']);
