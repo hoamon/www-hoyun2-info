@@ -14,10 +14,11 @@ phases:
     commands:
       - pip install --upgrade pip
       - pip install --upgrade awscli
+      - export BRANCH=$(git rev-parse --abbrev-ref HEAD)
       - export COMMIT_CHANGESET=$(git rev-parse HEAD)
       - export SHORT_COMMIT_CHANGESET=$(git rev-parse --short=7 HEAD)
       - export BUILD_TIME=$(date +%Y-%m-%dT%H:%M:%S%z)
-      - echo -e '{ "CODEBUILD_BUILD_ID"':' "'${CODEBUILD_BUILD_ID}'",\n  "BUILD_TIME"':' "'${BUILD_TIME}'",\n   "COMMIT_CHANGESET"':' "'${COMMIT_CHANGESET}'" }' > trunk/__version__.json
+      - echo -e '{ "BRANCH"':' "'${BRANCH}'", \n  "CODEBUILD_BUILD_ID"':' "'${CODEBUILD_BUILD_ID}'",\n  "BUILD_TIME"':' "'${BUILD_TIME}'",\n   "COMMIT_CHANGESET"':' "'${COMMIT_CHANGESET}'" }' > trunk/__version__.json
   build:
     commands:
       - aws s3 cp --recursive trunk s3://www.hoyun2.info/
